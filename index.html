@@ -38,25 +38,102 @@
         </div>
     </nav>
 
-    <!-- =========== HERO SECTION =========== -->
+    <!-- =========== HERO SECTION (SLIDER) =========== -->
     <section id="beranda" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Sewa Mobil Mudah, Cepat, dan Nyaman</h1>
-                <p class="hero-subtitle">Nikmati pengalaman rental mobil terbaik dengan harga transparan, mobil terawat, dan layanan pelanggan 24/7</p>
-                
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <a href="#mobil" style="text-decoration: none; color: white;">Lihat Mobil</a>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <a href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20booking%20mobil%20di%20RentCar" target="_blank" style="text-decoration: none; color: inherit;">Hubungi WhatsApp</a>
-                    </button>
+        <div class="hero-slider-wrapper">
+            <!-- Slides Container -->
+            <div class="hero-slides">
+                <!-- Slide 1 -->
+                <div class="hero-slide fade-in">
+                    <div class="slide-content">
+                        <h1 class="hero-title">Sewa Mobil Mudah, Cepat, dan Nyaman</h1>
+                        <p class="hero-subtitle">Nikmati pengalaman rental mobil terbaik dengan harga transparan, mobil terawat, dan layanan pelanggan 24/7</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">
+                                <a href="#mobil" style="text-decoration: none; color: white;">Lihat Mobil</a>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <a href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20booking%20mobil%20di%20RentCar" target="_blank" style="text-decoration: none; color: inherit;">Hubungi WhatsApp</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="https://via.placeholder.com/450x400/f0f0f0/999?text=Mobil+Premium" alt="Mobil Premium">
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <div class="slide-content">
+                        <h1 class="hero-title">Armada Lengkap untuk Semua Kebutuhan</h1>
+                        <p class="hero-subtitle">Pilih dari 20+ unit mobil berkualitas mulai dari keluarga, bisnis, hingga petualangan Anda</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">
+                                <a href="#mobil" style="text-decoration: none; color: white;">Lihat Daftar Mobil</a>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <a href="#tentang" style="text-decoration: none; color: inherit;">Pelajari Lebih Lanjut</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="https://via.placeholder.com/450x400/f0f0f0/999?text=Armada+Mobil" alt="Armada Mobil">
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <div class="slide-content">
+                        <h1 class="hero-title">Harga Terjangkau, Kualitas Terjamin</h1>
+                        <p class="hero-subtitle">Dapatkan harga terbaik tanpa biaya tersembunyi dengan garansi kualitas mobil dan layanan premium</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">
+                                <a href="#mobil" style="text-decoration: none; color: white;">Cek Harga Terbaik</a>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <a href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20tahu%20harga%20rental%20mobil%20di%20RentCar" target="_blank" style="text-decoration: none; color: inherit;">Tanya Harga</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="https://via.placeholder.com/450x400/f0f0f0/999?text=Harga+Terjangkau" alt="Harga Terjangkau">
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="hero-slide">
+                    <div class="slide-content">
+                        <h1 class="hero-title">Booking Cepat, Langsung Berangkat</h1>
+                        <p class="hero-subtitle">Proses booking yang super mudah hanya melalui WhatsApp, mobil siap dalam hitungan jam</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">
+                                <a href="#cara-booking" style="text-decoration: none; color: white;">Lihat Cara Booking</a>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <a href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20booking%20mobil%20sekarang" target="_blank" style="text-decoration: none; color: inherit;">Booking Sekarang</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="https://via.placeholder.com/450x400/f0f0f0/999?text=Booking+Cepat" alt="Booking Cepat">
+                    </div>
                 </div>
             </div>
 
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/450x400/f0f0f0/999?text=Mobil+Premium" alt="Mobil Rental">
+            <!-- Navigation Arrows -->
+            <button class="slider-nav slider-nav-prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav slider-nav-next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Dots/Indicators -->
+            <div class="slider-dots">
+                <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+                <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+                <button class="dot" data-slide="3" aria-label="Go to slide 4"></button>
             </div>
         </div>
     </section>
@@ -268,7 +345,7 @@
     </section>
 
     <!-- =========== SECTION CARA BOOKING =========== -->
-    <section class="cara-booking">
+    <section id="cara-booking" class="cara-booking">
         <div class="cara-booking-container">
             <h2 class="section-title">Cara Booking</h2>
             <p class="section-subtitle">Proses booking yang mudah dan cepat hanya dalam 4 langkah</p>

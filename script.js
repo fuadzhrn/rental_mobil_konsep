@@ -1,3 +1,110 @@
+// ==================== HERO SLIDER FUNCTIONALITY ====================
+
+class HeroSlider {
+    constructor() {
+        this.slides = document.querySelectorAll('.hero-slide');
+        this.dots = document.querySelectorAll('.slider-dots .dot');
+        this.prevBtn = document.querySelector('.slider-nav-prev');
+        this.nextBtn = document.querySelector('.slider-nav-next');
+        this.currentSlide = 0;
+        this.isTransitioning = false;
+        this.autoPlayDelay = 6000; // 6 detik
+        
+        if (this.slides.length === 0) return;
+        
+        this.init();
+    }
+
+    init() {
+        // Setup initial state
+        this.updateSlides();
+        
+        // Event listeners
+        this.prevBtn?.addEventListener('click', () => this.prevSlide());
+        this.nextBtn?.addEventListener('click', () => this.nextSlide());
+        
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        // Auto play
+        this.autoPlay();
+
+        // Pause autoplay on hover
+        const slider = document.querySelector('.hero-slider-wrapper');
+        slider?.addEventListener('mouseenter', () => this.stopAutoPlay());
+        slider?.addEventListener('mouseleave', () => this.autoPlay());
+    }
+
+    updateSlides() {
+        // Remove active class dari semua slides
+        this.slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev');
+            if (index === this.currentSlide) {
+                slide.classList.add('active');
+            } else if (index === (this.currentSlide - 1 + this.slides.length) % this.slides.length) {
+                slide.classList.add('prev');
+            }
+        });
+
+        // Update dots
+        this.dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentSlide);
+        });
+    }
+
+    nextSlide() {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
+        
+        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+        this.updateSlides();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 800);
+    }
+
+    prevSlide() {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
+        
+        this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+        this.updateSlides();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 800);
+    }
+
+    goToSlide(index) {
+        if (this.isTransitioning || index === this.currentSlide) return;
+        this.isTransitioning = true;
+        
+        this.currentSlide = index;
+        this.updateSlides();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 800);
+    }
+
+    autoPlay() {
+        this.autoPlayTimer = setInterval(() => {
+            this.nextSlide();
+        }, this.autoPlayDelay);
+    }
+
+    stopAutoPlay() {
+        clearInterval(this.autoPlayTimer);
+    }
+}
+
+// Initialize slider when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new HeroSlider();
+});
+
 // ==================== NAVBAR FUNCTIONALITY ====================
 
 const navbar = document.querySelector('.navbar');
